@@ -89,6 +89,14 @@ h1 span{color:var(--p)}
 .fc h3{font-size:17px;margin-bottom:8px}
 .fc p{font-size:13.5px;line-height:1.75;color:var(--m)}
 
+/* ---------- APP VIDEO ---------- */
+.vid-sec{padding:20px 5vw 90px;max-width:1200px;margin:0 auto;scroll-margin-top:20px}
+.vid-sec h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;text-align:center;letter-spacing:-.5px}
+.vid-sec .sub{text-align:center;color:var(--m);margin:10px auto 36px;max-width:520px;font-size:14.5px;line-height:1.7}
+.vid-wrap{display:flex;justify-content:center}
+.vid-frame{width:100%;max-width:340px;border-radius:28px;overflow:hidden;background:#0a3a26;border:6px solid var(--pd);box-shadow:0 24px 50px rgba(12,74,48,.28)}
+.vid-frame video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#0a3a26}
+
 .band{margin:0 5vw 80px;border-radius:30px;padding:60px 5vw;text-align:center;color:#fff;background:linear-gradient(130deg,var(--pd),var(--p) 60%,var(--pm) 130%)}
 .band h2{font-size:clamp(26px,3.2vw,38px);font-weight:800}
 .band p{margin:12px 0 28px;opacity:.9;font-size:14.5px}
@@ -138,6 +146,7 @@ dialog::backdrop{background:rgba(6,30,20,.6);backdrop-filter:blur(3px)}
     <div class="nav-l">
       <a href="#home">Home</a>
       <a href="#features">Features</a>
+      <a href="#app-video">App Video</a>
     </div>
     <a class="brand" href="#home">
       <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#1b8a4c"/><rect x="11" y="21" width="5" height="9" rx="1.5" fill="#fff"/><rect x="18" y="15" width="5" height="15" rx="1.5" fill="#fff"/><rect x="25" y="10" width="5" height="20" rx="1.5" fill="#fff"/></svg>
@@ -160,6 +169,7 @@ dialog::backdrop{background:rgba(6,30,20,.6);backdrop-filter:blur(3px)}
           Download APK
         </a>
         <button class="btn btn-ghost" onclick="openGuide()">Install Guide</button>
+        <a class="btn btn-ghost" href="#app-video">&#9654; App Video</a>
       </div>
       <div class="note">Android • Free • Or <a href="app.html" style="color:var(--p);font-weight:600;text-decoration:underline">use it on the web</a></div>
     </div>
@@ -199,6 +209,20 @@ dialog::backdrop{background:rgba(6,30,20,.6);backdrop-filter:blur(3px)}
     <div class="fc"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 19V5m0 0l-6 6m6-6l6 6"/></svg></div><h3>Income &amp; Expenses</h3><p>Add every income and expense in seconds and see your balance update instantly.</p></div>
     <div class="fc"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 12A9 9 0 1112 3v9z"/><path d="M15 3.5A9 9 0 0120.5 9H15z"/></svg></div><h3>Budgets</h3><p>Set a monthly budget and keep an eye on how much you have already spent.</p></div>
     <div class="fc"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div><h3>Goals &amp; Transfers</h3><p>Save towards your goals and move money between your accounts with ease.</p></div>
+  </div>
+</section>
+
+<!-- ================= APP VIDEO ================= -->
+<section class="vid-sec" id="app-video">
+  <h2>See TakaTrack in action</h2>
+  <p class="sub">Watch the short app video and see how easy it is to track every taka.</p>
+  <div class="vid-wrap">
+    <div class="vid-frame">
+      <video controls playsinline preload="metadata" controlslist="nodownload">
+        <source src="taka-track-ad.mp4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+    </div>
   </div>
 </section>
 
