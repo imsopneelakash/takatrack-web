@@ -20,7 +20,10 @@ jobs:
       - run: mkdir -p assets && cp icon-only.png assets/icon-only.png
       - run: npx @capacitor/assets generate --android --iconBackgroundColor "#0e9f6e" --iconBackgroundColorDark "#0e9f6e"
         continue-on-error: true
-      - run: rm -f www/*.apk
+      - name: Use the tracker app as the APK start page
+        run: |
+          cp www/app.html www/index.html
+          rm -f www/taka-track-ad.mp4 www/*.apk
       - run: npx cap sync android
       - run: cd android && chmod +x gradlew && ./gradlew assembleRelease
       - name: Sign APK
