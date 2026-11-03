@@ -1,5 +1,7 @@
 name: Build APK
 on: [push, workflow_dispatch]
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,3 +33,9 @@ jobs:
         with:
           name: masik-hisab-apk
           path: masik-hisab.apk
+      - name: Publish APK to Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="build-${{ github.run_number }}"
+          gh release create "$TAG" masik-hisab.apk --title "TakaTrack build ${{ github.run_number }}" --notes "TakaTrack Android APK" --latest || gh release upload "$TAG" masik-hisab.apk --clobber
