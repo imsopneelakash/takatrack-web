@@ -10,14 +10,19 @@
   var cap = window.Capacitor;
   if (!cap || !cap.isNativePlatform || !cap.isNativePlatform()) return; // website: no ads
 
+  function setAdHeight(h) {
+    document.documentElement.style.setProperty('--ad', h + 'px');
+    // pages without their own bottom bar (e.g. landing page) just get bottom padding
+    if (!document.getElementById('n')) document.body.style.paddingBottom = h + 'px';
+  }
+
   async function start() {
     try {
       var AdMob = cap.Plugins && cap.Plugins.AdMob;
       if (!AdMob) return;
       await AdMob.initialize({ initializeForTesting: TEST });
       AdMob.addListener('bannerAdSizeChanged', function (size) {
-        // keep page content clear of the banner
-        document.body.style.paddingBottom = (size && size.height ? size.height : 0) + 'px';
+        setAdHeight(size && size.height ? size.height : 0);
       });
       await AdMob.showBanner({
         adId: TEST ? UNIT_TEST : UNIT_REAL,
