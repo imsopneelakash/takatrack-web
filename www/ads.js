@@ -3,7 +3,7 @@
    TEST = true  -> Google sample (test) ads, safe for development.
    TEST = false -> your real ad unit (switch only for the final release). */
 (function () {
-  var TEST = true;
+  var TEST = false;
   var UNIT_TEST = 'ca-app-pub-3940256099942544/6300978111';
   var UNIT_REAL = 'ca-app-pub-9612096979718972/7266736524';
 
